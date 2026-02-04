@@ -23,7 +23,7 @@ services:
 
   # Frontend Service
   - type: web
-    name: sietcse-frontend
+    name: sietcse-frontend-v2
     env: static
     # Root key is optional for root directory, but setting it to '.' is explicit
     # The error "path /opt/render/project/src/package.json" suggests Render might have been auto-configured wrong or 'root' was set wrong manually.
