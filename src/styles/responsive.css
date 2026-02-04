@@ -1,0 +1,71 @@
+/* Responsive Utilities */
+@media (max-width: 640px) {
+
+    /* Mobile styles */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    table {
+        font-size: 0.875rem;
+    }
+
+    .overflow-x-auto {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Tablet styles */
+    .grid-cols-2,
+    .grid-cols-3,
+    .grid-cols-4 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+/* Ensure all cards are responsive */
+.card {
+    @apply rounded-xl shadow-sm border border-gray-100 overflow-hidden;
+}
+
+/* Responsive tables */
+.responsive-table {
+    @apply overflow-x-auto;
+}
+
+.responsive-table table {
+    @apply min-w-full;
+}
+
+/* Mobile-friendly buttons */
+@media (max-width: 640px) {
+    button {
+        min-height: 44px;
+        /* Touch-friendly size */
+    }
+}
+
+/* Responsive text */
+.text-responsive-xl {
+    @apply text-xl sm:text-2xl lg:text-3xl;
+}
+
+.text-responsive-lg {
+    @apply text-lg sm:text-xl lg:text-2xl;
+}
+
+.text-responsive-base {
+    @apply text-sm sm:text-base;
+}
+
+/* Spacing utilities */
+.section-padding {
+    @apply p-4 sm:p-6 lg:p-8;
+}
+
+.section-margin {
+    @apply space-y-4 sm:space-y-6;
+}
