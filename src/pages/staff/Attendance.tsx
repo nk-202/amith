@@ -41,7 +41,7 @@ export const Attendance = () => {
     const [attendanceDate, setAttendanceDate] = useState(new Date().toISOString().split('T')[0]);
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
-    const [facultyId, setFacultyId] = useState('');
+
     const [showAttendanceModal, setShowAttendanceModal] = useState(false);
 
     // Fetch faculty timetable
@@ -62,7 +62,7 @@ export const Attendance = () => {
                 }
 
                 console.log('✅ Faculty found:', faculty.id, faculty.name);
-                setFacultyId(faculty.id);
+                // setFacultyId(faculty.id); // Removed unused variable
 
                 // Get timetable entries
                 const allTimetable = await timetableService.getAll();

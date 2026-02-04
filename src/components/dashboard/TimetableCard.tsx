@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { Clock, MapPin, User, BookOpen, CalendarDays } from 'lucide-react';
 import type { TimetablePeriod } from '../../types';
 import { timetableService } from '../../services/timetableService';
-import { useAuth } from '../../context/AuthContext';
 
 // Basic UI Components to replace missing ones or we should use relative imports if files exist
 // Assuming files don't exist in standard 'ui' folder as per previous 'AdminTimetable' fix which removed them.
@@ -27,7 +26,7 @@ interface TimetableCardProps {
 }
 
 const TimetableCard: React.FC<TimetableCardProps> = ({ role, classId, facultyId }) => {
-    const [schedule, setSchedule] = useState<TimetablePeriod[]>([]);
+    // const [schedule, setSchedule] = useState<TimetablePeriod[]>([]); // Removed unused variable
     const [currentPeriod, setCurrentPeriod] = useState<TimetablePeriod | null>(null);
     const [nextPeriod, setNextPeriod] = useState<TimetablePeriod | null>(null);
     const [loading, setLoading] = useState(true);
@@ -62,7 +61,7 @@ const TimetableCard: React.FC<TimetableCardProps> = ({ role, classId, facultyId 
             } else if (role === 'faculty' && facultyId) {
                 data = await timetableService.getByFaculty(facultyId);
             }
-            setSchedule(data);
+
             updateCurrentNext(data);
         } catch (error) {
             console.error('Failed to fetch schedule:', error);

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { classService } from '../../services/classService';
 import { timetableService } from '../../services/timetableService';
 import { facultyService } from '../../services/facultyService';
 import { Modal } from '../../components/ui/Modal';
-import { Plus, Edit2, Loader2, Save, Calendar, BookOpen, Clock, MapPin, User } from 'lucide-react';
+import { Plus, Loader2, Save, Calendar, BookOpen, MapPin, User } from 'lucide-react';
 import type { ClassSection, TimetablePeriod, Staff } from '../../types';
 
 export const AdminTimetable = () => {

@@ -1,10 +1,9 @@
 import {
-    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
-    PieChart, Pie, Cell
+    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
-import type { User, Student } from '../../types';
+import type { Student } from '../../types';
 import { motion } from 'framer-motion';
-import { User as UserIcon, Mail, BookOpen, Fingerprint } from 'lucide-react';
+import { Mail, BookOpen, Fingerprint } from 'lucide-react';
 
 interface ProfileReportProps {
     user: Student; // Strictly for students now, can be extended
@@ -24,17 +23,14 @@ export const ProfileReport = ({ user }: ProfileReportProps) => {
         lab: user.marks.lab[subject] || 0
     }));
 
-    const COLORS = ['#22C55E', '#E5E7EB']; // Green vs Gray
+
 
     // Calculate overall attendance for Pie Chart
     const totalClasses = Object.keys(user.attendance).length * 100;
     const totalPresent = Object.values(user.attendance).reduce((a, b) => a + b, 0);
     const overallPercentage = Math.round((totalPresent / totalClasses) * 100);
 
-    const overallAttendanceData = [
-        { name: 'Present', value: overallPercentage },
-        { name: 'Absent', value: 100 - overallPercentage },
-    ];
+
 
     return (
         <div className="space-y-8 max-w-5xl mx-auto">

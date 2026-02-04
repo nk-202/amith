@@ -11,6 +11,7 @@ export const StaffDashboard = () => {
     const { user } = useAuth();
     const [students, setStudents] = useState<Student[]>([]);
     const [loading, setLoading] = useState(true);
+    const [facultyId, setFacultyId] = useState<string | undefined>(undefined);
     const [stats, setStats] = useState({
         totalStudents: 0,
         totalClasses: 0,
@@ -35,6 +36,8 @@ export const StaffDashboard = () => {
                 setLoading(false);
                 return;
             }
+
+            setFacultyId(facultyProfile.id);
 
             // Get faculty's timetable to find assigned classes
             const timetable = await timetableService.getByFaculty(facultyProfile.id);
@@ -122,7 +125,7 @@ export const StaffDashboard = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Main Schedule Column */}
                 <div className="lg:col-span-2 space-y-6">
-                    <TimetableCard role="faculty" facultyId={user?.profileId} />
+                    <TimetableCard role="faculty" facultyId={facultyId} />
 
                     {/* My Students Section */}
                     <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
