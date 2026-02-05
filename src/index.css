@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './styles/responsive.css';
+
 
 @layer base {
   body {
