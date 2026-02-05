@@ -26,7 +26,33 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    origin: function (origin, callback) {
+        const allowedOrigins = [
+            'http://localhost:5173',
+            'https://amith-93zp.onrender.com', // Your deployed frontend
+            process.env.FRONTEND_URL // Any other dynamic URL
+        ];
+
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+
+        if (allowedOrigins.indexOf(origin) !== -1 || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            // For now, in development/testing, let's be permissive if it looks like our frontend
+            // or just allow it to fix the immediate blocker, but standard practice is specific origins.
+            // Let's stick to the specific list + env var to be safe but effective.
+            if (process.env.NODE_ENV === 'development') {
+                callback(null, true);
+            } else {
+                // For the user request, we simply want to ADD their new URL.
+                // If the origin is not in the list, technically we should block it, 
+                // but checking if it includes 'onrender.com' might be a temporary safety net? 
+                // No, let's just stick to the specific allowed array.
+                callback(new Error('Not allowed by CORS'));
+            }
+        }
+    },
     credentials: true
 }));
 app.use(express.json());

@@ -38,7 +38,7 @@ const Faculty = mongoose.model('Faculty', facultySchema);
 async function createTestUsers() {
     try {
         console.log('Connecting to MongoDB...');
-        await mongoose.connect(process.env.MONGODB_URI);
+        await mongoose.connect(process.env.MONGO_URI);
         console.log('✅ Connected to MongoDB\n');
 
         // Test credentials to create
