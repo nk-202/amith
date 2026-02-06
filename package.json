@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
-        "render-build": "npm install && tsc && vite build && cd server && npm install",
+        "render-build": "npm install && vite build && cd server && npm install",
         "start": "node server/server.js",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
