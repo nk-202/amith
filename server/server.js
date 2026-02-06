@@ -84,8 +84,30 @@ app.use((err, req, res, next) => {
 });
 
 // 404 handler
-app.use((req, res) => {
-    res.status(404).json({ error: 'Route not found' });
+app.use((req, res, next) => {
+    // If the request is for an API route and didn't match, return 404
+    if (req.path.startsWith('/api')) {
+        return res.status(404).json({ error: 'Route not found' });
+    }
+    next();
+});
+
+// Serve static files from the frontend build directory
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Adjust the path to where your frontend build is located
+// Assuming it's in the root 'dist' folder (one level up from server)
+const buildPath = path.join(__dirname, '../dist');
+
+app.use(express.static(buildPath));
+
+// Handle SPA routing: return index.html for any non-API route
+app.get('*', (req, res) => {
+    res.sendFile(path.join(buildPath, 'index.html'));
 });
 
 app.listen(PORT, () => {

@@ -1,0 +1,32 @@
+[
+  {
+    "email": "admin@siet.edu",
+    "password": "admin123",
+    "role": "admin"
+  },
+  {
+    "email": "faculty@siet.edu",
+    "password": "faculty123",
+    "role": "staff"
+  },
+  {
+    "email": "hod@siet.edu",
+    "password": "hod123",
+    "role": "hod"
+  },
+  {
+    "email": "john@siet.edu",
+    "password": "student123",
+    "role": "student"
+  },
+  {
+    "email": "hod@cse",
+    "password": "123",
+    "role": "hod"
+  },
+  {
+    "email": "nk@gmail.com",
+    "password": "123",
+    "role": "staff"
+  }
+]

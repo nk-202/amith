@@ -1,0 +1,103 @@
+[
+  {
+    "_id": "698025f55a6daf4f70eb5b28",
+    "name": "System Admin",
+    "email": "admin@cse",
+    "role": "admin"
+  },
+  {
+    "_id": "69802934013e2db7499196ae",
+    "name": "undefined Kashyap",
+    "email": "ff@gmail.com",
+    "role": "staff"
+  },
+  {
+    "_id": "69802bc917720095d6be0fc3",
+    "name": "jaon kfjnakjfa",
+    "email": "admin@akshara.com",
+    "role": "hod"
+  },
+  {
+    "_id": "69802c1217720095d6be0fe1",
+    "name": "Nikhil Kashyap",
+    "email": "ffw@gmail.com",
+    "role": "student"
+  },
+  {
+    "_id": "69823d52a682ccc06be42a01",
+    "name": "jaon K",
+    "email": "ssss@fsfsf",
+    "role": "hod"
+  },
+  {
+    "_id": "69823f39ce38c8f1b1b3f1cb",
+    "name": "sg g",
+    "email": "nikhilkashyapkn@gmail.com",
+    "role": "staff"
+  },
+  {
+    "_id": "69824698c02056da58158e0f",
+    "name": "Nikhil Kashyap k N",
+    "email": "nk@gmail.com",
+    "role": "staff"
+  },
+  {
+    "_id": "6982cec5497c684073c071ca",
+    "name": "jaon g",
+    "email": "dhruv@gmail.com",
+    "role": "student"
+  },
+  {
+    "_id": "6982cefc497c684073c071d2",
+    "name": "sg g",
+    "email": "sg@gmail.com",
+    "role": "student"
+  },
+  {
+    "_id": "6982cf16497c684073c071da",
+    "name": "sg g",
+    "email": "sg2@gmail.com",
+    "role": "student"
+  },
+  {
+    "_id": "6982cfa28acd865912521334",
+    "name": "sga ga",
+    "email": "sg3@gmail.com",
+    "role": "student"
+  },
+  {
+    "_id": "69831c94281c0434a10125cc",
+    "email": "hod@cse",
+    "role": "hod"
+  },
+  {
+    "_id": "698323e259f8e29a89a159d0",
+    "name": "dr K",
+    "email": "nikhilkashyap4217@gmail.com",
+    "role": "student"
+  },
+  {
+    "_id": "698324dc9d401f6bad3be64f",
+    "name": "John doe",
+    "email": "john@siet.edu",
+    "role": "student"
+  },
+  {
+    "_id": "6984ac31bbcad472eddb0e06",
+    "name": "Super Admin",
+    "email": "admin@siet.edu",
+    "role": "admin"
+  },
+  {
+    "_id": "6984ac31bbcad472eddb0e09",
+    "name": "Test Faculty",
+    "email": "faculty@siet.edu",
+    "role": "staff"
+  },
+  {
+    "_id": "6984ac31bbcad472eddb0e0e",
+    "name": "HOD CSE",
+    "email": "hod@siet.edu",
+    "role": "hod"
+  }
+]
